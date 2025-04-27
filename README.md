@@ -1,1 +1,1 @@
-Just a repo to storage some useful little tool
+Just a repo to storage some useful tools
