@@ -160,15 +160,15 @@ namespace ConsoleApp1
         // 使用 OpenXML SDK 替换文档内容
         private static bool ReplaceContent(OpenXmlPart part, int oldMonth, int newMonth, int? oldYear, int? newYear)
         {
-            bool modified = false;
+            var modified = false;
 
             // 替换月份
-            string monthSearch = $"{oldMonth}月";
-            string monthReplace = $"{newMonth}月";
+            var monthSearch = $"{oldMonth}月";
+            var monthReplace = $"{newMonth}月";
 
             // 替换年份（如果有）
-            string? yearSearch = oldYear?.ToString();
-            string? yearReplace = newYear?.ToString();
+            var yearSearch = oldYear?.ToString();
+            var yearReplace = newYear?.ToString();
 
             foreach (var text in part.RootElement.Descendants<Text>())
             {
@@ -183,18 +183,16 @@ namespace ConsoleApp1
                 }
 
                 // 替换年份（仅当年份不为 null 时）
-                if (yearSearch != null && yearReplace != null && originalText.Contains(yearSearch))
-                {
-                    text.Text = originalText.Replace(yearSearch, yearReplace);
-                    modified = true;
-                }
+                if (yearSearch == null || yearReplace == null || !originalText.Contains(yearSearch)) continue;
+                text.Text = originalText.Replace(yearSearch, yearReplace);
+                modified = true;
             }
 
             return modified;
         }
 
         // 使用简单字符串替换实现文件名中月份更新
-        static string ProcessFileName(string fileName, int oldMonth, int newMonth, int? oldYear, int? newYear)
+        private static string ProcessFileName(string fileName, int oldMonth, int newMonth, int? oldYear, int? newYear)
         {
             // 分离文件名和扩展名
             var nameWithoutExt = Path.GetFileNameWithoutExtension(fileName);
