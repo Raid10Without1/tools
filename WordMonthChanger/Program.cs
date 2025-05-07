@@ -26,10 +26,10 @@ namespace ConsoleApp1
                 var files = GetWordFiles(Directory.GetCurrentDirectory());
                 if (files.Length == 0)
                 {
-                    Console.WriteLine("没有找到任何docx文件");
+                    Console.WriteLine("没有找到任何文件");
                     return;
                 }
-                Console.WriteLine($"找到 {files.Length} 个docx文件");
+                Console.WriteLine($"找到 {files.Length} 个文件");
 
                 // 处理文件
                 ProcessFiles(files, oldMonth, newMonth, oldYear, newYear);
