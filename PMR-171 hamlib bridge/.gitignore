@@ -1,10 +1,13 @@
+.vscode/
 build/
 dist/
+/__pycache__/
 *.exe
 *.pyc
 *.spec
-.vscode/
-import struct.py
-warn-main.txt
-xref-main.html
 *.zip
+*.pyc
+xref-main.html
+warn-main.txt
+import struct.py
+
