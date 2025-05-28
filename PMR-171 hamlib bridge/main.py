@@ -39,8 +39,6 @@ class PMR171Bridge:
                 return id_
         return 0  # fallback to USB
 
-<<<<<<< HEAD
-=======
     # 模式映射表（class attribute）
     MODE_MAP = {
         0: 'USB',
@@ -62,15 +60,10 @@ class PMR171Bridge:
                 return id_
         return 0  # fallback to USB
 
->>>>>>> 1e6f211 (实现模式转换功能，添加获取当前模式和频率的方法)
     # 获取模式ID → 名称
     @classmethod
     def mode_id_to_name(cls, mode_id: int) -> str:
         return cls.MODE_MAP.get(mode_id, 'USB')
-<<<<<<< HEAD
-=======
-
->>>>>>> 1e6f211 (实现模式转换功能，添加获取当前模式和频率的方法)
     def build_packet(self, cmd_type, data: bytes):
         pkt = b'\xA5\xA5\xA5\xA5'
         body = bytes([cmd_type]) + data
@@ -102,8 +95,6 @@ class PMR171Bridge:
         with self.lock:
             self.ser.write(pkt)
             response = self.ser.read(64)
-<<<<<<< HEAD
-=======
 
         if not response.startswith(b'\xA5\xA5\xA5\xA5'):
             return 'USB 2400'
@@ -115,7 +106,7 @@ class PMR171Bridge:
             return f'{mode_str} 2400'
         except Exception:
             return 'USB 2400'
->>>>>>> 1e6f211 (实现模式转换功能，添加获取当前模式和频率的方法)
+
 
         if not response.startswith(b'\xA5\xA5\xA5\xA5'):
             return 'USB 2400'
@@ -174,10 +165,6 @@ def rigctl_server(bridge: PMR171Bridge, host='127.0.0.1', port=4532):
                         }
                         bridge.set_mode(mode_map.get(mode.upper(), 0))
                         client_socket.send(b'RPRT 0\n')
-<<<<<<< HEAD
-
-=======
->>>>>>> 1e6f211 (实现模式转换功能，添加获取当前模式和频率的方法)
                     elif cmd == 'v':
                         client_socket.send(b'PMR-171\n')
                     elif cmd == 'V':
@@ -185,10 +172,6 @@ def rigctl_server(bridge: PMR171Bridge, host='127.0.0.1', port=4532):
                     elif cmd == 'm':
                         mode = bridge.get_mode()
                         client_socket.send(f"{mode}\n".encode())
-<<<<<<< HEAD
-
-=======
->>>>>>> 1e6f211 (实现模式转换功能，添加获取当前模式和频率的方法)
                     elif cmd.startswith('T'):
                         state = cmd[1:].strip()
                         bridge.set_ptt(state == '1')
@@ -211,7 +194,7 @@ def rigctl_server(bridge: PMR171Bridge, host='127.0.0.1', port=4532):
                 threading.Thread(target=handle, args=(conn,), daemon=True).start()
             except Exception as e:
                 print(f"Socket异常: {e}")
-def get_freq(self) -> int:
+
         """请求当前频率并返回 VFOA 频率（单位 Hz）"""
         pkt = self.build_packet(0x0B, b'')  # 状态同步命令
         with self.lock:
@@ -259,7 +242,6 @@ def get_freq(self) -> int:
             return f'{mode_str} 2400'
         except Exception:
             return 'USB 2400'
-
 def get_freq(self) -> int:
         """请求当前频率并返回 VFOA 频率（单位 Hz）"""
         pkt = self.build_packet(0x0B, b'')  # 状态同步命令
