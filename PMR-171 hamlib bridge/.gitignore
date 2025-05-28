@@ -3,4 +3,5 @@
 *.pyc
 /__pycache__/
 .vscode/
-
+WordMonthChanger/bin/
+textchanger/
