@@ -16,7 +16,7 @@
 
 ## 📦 下载 Download
 
-请在 [Releases](https://github.com/你的用户名/你的仓库/releases) 页面下载最新版本的 `pmr171_rigctl_bridge.exe`。
+请在 [Releases](https://github.com/Raid10Without1/tools/releases/tag/hamlib) 页面下载最新版本的 `pmr171_rigctl_bridge.exe`。
 
 ---
 
