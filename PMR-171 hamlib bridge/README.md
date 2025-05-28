@@ -16,6 +16,7 @@
 
 ## 📦 下载 Download
 
+<<<<<<< HEAD
 请在 [Releases](https://github.com/Raid10Without1/tools/releases/tag/hamlib) 页面下载最新版本的 `pmr171_rigctl_bridge.exe`。
 
 ---
@@ -45,7 +46,11 @@
 
 ### 4. 配置音频设备
 
+<<<<<<< HEAD
 在 `Settings -> Audio` 中选择 PMR-171 的声卡设备。
+=======
+在 `Settings -> Audio` 中选择 PMR-171 的声卡设备（通常名为 `USB Audio CODEC` 或类似名称）。
+>>>>>>> 4d0a9a1 (Add a README file)
 
 ---
 
