@@ -45,7 +45,7 @@
 
 ### 4. 配置音频设备
 
-在 `Settings -> Audio` 中选择 PMR-171 的声卡设备（通常名为 `USB Audio CODEC` 或类似名称）。
+在 `Settings -> Audio` 中选择 PMR-171 的声卡设备。
 
 ---
 
