@@ -1,0 +1,2 @@
+E:\GIT\tools\tools\WordMonthChanger\bin\Release\net9.0\win-x64\publish\ConsoleApp1.pdb
+E:\GIT\tools\tools\WordMonthChanger\bin\Release\net9.0\win-x64\publish\ConsoleApp1.exe
