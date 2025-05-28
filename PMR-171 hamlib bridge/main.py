@@ -1,3 +1,9 @@
+# PMR-171 Rigctl Bridge
+# Copyright (C) 2025 Raid10Without1
+#
+# 本程序是自由软件，你可以依据 GNU 通用公共许可证（GPLv3）条款重新发布和修改它。
+# 本程序是基于“现状”提供的，没有任何担保，包括适销性或特定用途的适用性。
+# 详情请参阅 <https://www.gnu.org/licenses/gpl-3.0.html>
 import socket
 import serial
 import struct
