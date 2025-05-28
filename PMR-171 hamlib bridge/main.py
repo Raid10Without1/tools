@@ -18,7 +18,6 @@ class PMR171Bridge:
         self.ser = serial.Serial(serial_port, baudrate=baudrate, timeout=1)
         self.lock = threading.Lock()
         self.crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc=0xFFFF, xorOut=0x0000)
-
     # 模式映射表（class attribute）
     MODE_MAP = {
         0: 'USB',
@@ -44,7 +43,6 @@ class PMR171Bridge:
     @classmethod
     def mode_id_to_name(cls, mode_id: int) -> str:
         return cls.MODE_MAP.get(mode_id, 'USB')
-
     def build_packet(self, cmd_type, data: bytes):
         pkt = b'\xA5\xA5\xA5\xA5'
         body = bytes([cmd_type]) + data
@@ -87,7 +85,6 @@ class PMR171Bridge:
             return f'{mode_str} 2400'
         except Exception:
             return 'USB 2400'
-
     def set_ptt(self, ptt_on: bool):
         b = bytes([0x00 if ptt_on else 0x01])
         pkt = self.build_packet(0x07, b)
@@ -135,6 +132,7 @@ def rigctl_server(bridge: PMR171Bridge, host='127.0.0.1', port=4532):
                         }
                         bridge.set_mode(mode_map.get(mode.upper(), 0))
                         client_socket.send(b'RPRT 0\n')
+
                     elif cmd == 'v':
                         client_socket.send(b'PMR-171\n')
                     elif cmd == 'V':
@@ -142,6 +140,7 @@ def rigctl_server(bridge: PMR171Bridge, host='127.0.0.1', port=4532):
                     elif cmd == 'm':
                         mode = bridge.get_mode()
                         client_socket.send(f"{mode}\n".encode())
+
                     elif cmd.startswith('T'):
                         state = cmd[1:].strip()
                         bridge.set_ptt(state == '1')
@@ -164,6 +163,7 @@ def rigctl_server(bridge: PMR171Bridge, host='127.0.0.1', port=4532):
                 threading.Thread(target=handle, args=(conn,), daemon=True).start()
             except Exception as e:
                 print(f"Socket异常: {e}")
+
 def get_freq(self) -> int:
         """请求当前频率并返回 VFOA 频率（单位 Hz）"""
         pkt = self.build_packet(0x0B, b'')  # 状态同步命令
@@ -213,6 +213,7 @@ def get_freq(self) -> int:
         except Exception:
             return 'USB 2400'
 
+
 def main():
     def signal_handler(sig, frame):
         print("\n程序已退出。")
@@ -222,8 +223,6 @@ def main():
     serial_port = select_serial_port()
     bridge = PMR171Bridge(serial_port)
     rigctl_server(bridge)
-
-
 
 if __name__ == '__main__':
     main()
