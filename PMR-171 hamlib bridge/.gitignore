@@ -1,16 +1,14 @@
 .vscode/
 build/
 dist/
-/__pycache__/
-*.exe
 *.pyc
 *.spec
+/__pycache__/
+*.exe
 *.zip
-*.pyc
 xref-main.html
 warn-main.txt
 import struct.py
 
-.vscode/
 WordMonthChanger/bin/
 textchanger/
