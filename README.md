@@ -77,6 +77,6 @@
 ---
 
 ## 📜 License
+本项目遵循 [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) 许可证。你可以自由使用、修改和分发本代码，但所有衍生作品必须保持 GPLv3 兼容性，并提供源代码。
 
-MIT License
 
