@@ -11,3 +11,6 @@ xref-main.html
 warn-main.txt
 import struct.py
 
+.vscode/
+WordMonthChanger/bin/
+textchanger/
