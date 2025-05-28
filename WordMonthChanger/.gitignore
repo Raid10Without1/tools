@@ -1,1 +1,36 @@
-/bin/
+# ⚙️ Visual Studio & .NET 构建相关
+bin/
+obj/
+*.suo
+*.user
+*.pdb
+*.aps
+*.ilk
+*.ncb
+*.sdf
+*.opensdf
+*.cache
+*.dll
+*.exe
+
+# 🏗️ 编译中间文件
+*.log
+*.tmp
+*.bak
+
+# 📦 NuGet 相关
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# 📄 代码分析 & 调试工具
+.vscode/
+.idea/
+*.sourcelink.json
+PublishOutputs.*.txt
+
+# 🌍 其他临时或系统文件
+Thumbs.db
+Desktop.ini
+
