@@ -1,8 +1,10 @@
-/build/
-/dist/
+build/
+dist/
+*.exe
 *.pyc
 *.spec
-/__pycache__/
 .vscode/
-WordMonthChanger/bin/
-textchanger/
+import struct.py
+warn-main.txt
+xref-main.html
+*.zip
